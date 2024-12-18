@@ -1,0 +1,42 @@
+﻿@model Sports2.Models.TimeSlot
+@{
+    ViewBag.Title = "TimeslotDetails";
+}
+
+<h2>TimeslotDetails</h2>
+
+<div>
+    <h4>TimeSlot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SlotStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlotStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlotEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlotEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAvailable)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "TimeSlotIndex")
+</p>
+
+

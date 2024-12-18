@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "SendMail";
+}
+
+<h2>SendMail</h2>
+
+
+<!-- Display success or error message -->
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.Message
+    </div>
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Soccer &mdash; Website by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="~/css/aos.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+
+
+</head>
+
+<body>
+
+    <div class="site-wrap">
+
+
+
+
+
+
+
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <!-- Form to collect email details -->
+                        <form action="~/Home/SendMail" method="post">
+                            <div class="form-group">
+                                <label for="Name">Name</label>
+                                <input type="text" class="form-control" name="Name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Email">Email</label>
+                                <input type="email" class="form-control" name="Email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Subject">Subject</label>
+                                <input type="text" class="form-control" name="Subject" placeholder="Enter subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Message">Message</label>
+                                <textarea name="Message" class="form-control" cols="30" rows="10" placeholder="Write your message" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Send Message">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 ml-auto">
+
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <strong class="text-white d-block">Address</strong>
+                                NTT Data,Whitefield <br> Banglore
+                            </li>
+                            <li class="mb-2">
+                                <strong class="text-white d-block">Email</strong>
+                                <a href="#">SoccerCup.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <strong class="text-white d-block">
+                                    Phone
+                                </strong>
+                                <a href="#">+91 9980327764</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <!-- .site-wrap -->
+
+
+
+</body>
+
+</html>
+
+

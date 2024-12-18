@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Sports2.Models.ClubRule>
+@{
+    ViewBag.Title = "ViewRulesIndex";
+}
+
+<h2>ViewRules</h2>
+<p>
+@Html.ActionLink("Back", "MemberDashboard", "Member", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table text-white">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RuleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RuleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "ViewRulesDetails", new { id = item.RuleId }) |
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Sports2.Models.TimeSlot>
+@{
+    ViewBag.Title = "MemberTimeSlotIndex";
+}
+
+<h2>Available Timeslots</h2>
+<p>
+    @Html.ActionLink("Back", "MemberDashboard", "Member", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table text-white">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SlotStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlotEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlotStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlotEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "MemberTimeslotDetails", new { id = item.TimeSlotId }) |
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9835d8c300b64e09af3d4b229b97904a" Name="Diagram1">
+        <EntityTypeShape EntityType="FinalcaseModel.Admin" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalcaseModel.ClubRule" Width="1.5" PointX="2.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalcaseModel.Facility" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalcaseModel.Member" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalcaseModel.MembershipCharge" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalcaseModel.TimeSlotRequest" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalcaseModel.TimeSlot" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalcaseModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="FinalcaseModel.FK__Members__Members__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalcaseModel.FK__Members__UserId__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalcaseModel.FK__TimeSlotR__TimeS__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalcaseModel.FK__TimeSlotR__UserI__75A278F5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,14 @@
+﻿@model List<Sports2.Models.ClubRule>
+@{
+    ViewBag.Title = "Club Rules";
+}
+
+<h2>Club Rules</h2>
+
+<ul>
+    @foreach (var rule in Model)
+    {
+        <li>@rule.Description</li>
+    }
+</ul>
+

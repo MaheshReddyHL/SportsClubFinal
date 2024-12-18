@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Sports2.Models.TimeSlot>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-secondary" })
+</p>
+<p>
+    @Html.ActionLink("Back", "AdminDashboard", "Admin", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table text-white">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeSlotId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlotStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlotEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeSlotId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlotStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlotEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsAvailable)
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Edit", new { id = item.TimeSlotId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TimeSlotId }) |
+            @Html.ActionLink("Cancel", "Delete", new { id = item.TimeSlotId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,54 @@
+﻿@model Sports2.Models.Admin
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+/*    .backgrd {
+        background-image: url('../../images/registerimage.jpg');
+        background-repeat: space;
+        background-repeat: space;
+        background-size: 100% 200%;
+    }*/
+    h2{
+        margin-top:1rem;
+    }
+    .form-group,h2{
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+        margin-left:2rem
+    }
+    </Style>
+
+<body class="backgrd">
+    <main style="border:1px solid white;width:25rem;box-shadow:white 3px 3px 5px ;margin-left:20rem;">
+        <h2>Admin Login</h2>
+
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.EmailId)
+                @Html.TextBoxFor(m => m.EmailId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.EmailId)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password)
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control",type="password" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+
+
+            if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+        }
+    </main>
+</body>
+
+

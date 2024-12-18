@@ -1,0 +1,672 @@
+﻿@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
+                @Html.ActionLink("SportsClub", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            @Html.ActionLink("UserLogin", "UserLogin", "Account", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Regiser", "Register", "Account", new { area = "" }, new { @class = "nav-link" })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p><b><i>&copy; @DateTime.Now.Year - Rise Above the Rest, Aim for the Best</i></b></p>
+    </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SportsClub &mdash; Website by Mahesh</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="~/css/aos.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+
+        <header class="site-navbar py-4" role="banner">
+
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <div class="site-logo">
+                        <a href="#">
+                            <img src="~/images/logo.png" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="ml-auto">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                @*<li class="active"><a href="" class="nav-link">Home</a></li>*@
+                                <li>
+                                    @Html.ActionLink("Home", "MainIndex", "Account", new { area = "" }, new { @class = "nav-link" })
+                                </li>
+                                @* <li><a href="~/Soccermaster/matches.html" class="nav-link">Matches</a></li>*@
+                                @* <li><a href="~/Soccermaster/players.html" class="nav-link">Players</a></li>
+        <li><a href="~/Soccermaster/blog.html" class="nav-link">Blog</a></li>
+        <li><a href="~/Soccermaster/contact.html" class="nav-link">Contact</a></li>
+                                *@
+                                <li>
+                                    @Html.ActionLink("ContactUs", "SendMail", "Home", new { area = "" }, new { @class = "nav-link" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("AdminLogin", "Login", "Account", new { area = "" }, new { @class = "nav-link" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Regiser", "Register", "Account", new { area = "" }, new { @class = "nav-link" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("UserLogin", "UserLogin", "Account", new { area = "" }, new { @class = "nav-link" })
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white">
+                            <span class="icon-menu h3 text-white"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+       
+
+         <div class="hero overlay"  style="background-image: url('images/bg_3.jpg');">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 ml-auto">
+                       
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+                        @* <h1 class="text-white">World Cup Event</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
+        <div id="date-countdown"></div>
+        <p>
+            <a href="#" class="btn btn-primary py-3 px-4 mr-3">Book Ticket</a>
+            <a href="#" class="more light">Learn More</a>
+        </p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container" style="margin-top:5%">
+
+
+            <div class="row">
+                @*<div class="col-lg-12">
+                    <div class="container body-content">
+                        @RenderBody()
+                    </div>*@
+                    
+                <div class="d-flex team-vs">
+                    <h1 class="text-white">World Cup Event</h1>
+                    <p></p>
+                    <div id="date-countdown"></div>
+                    <p>
+                        <b>My World Cup obsession may cause temporary deafness when goals are scored.</b> 
+                        @Html.ActionLink("Book Ticket", "Register", "Account", new { area = "" }, new { @class = "btn btn-primary py-3 px-4 mr-3" })
+                        @*
+        <a href="#" class="btn btn-primary py-3 px-4 mr-3">Book Ticket</a>*@
+                        <a href="#" class="more light">Learn More</a>
+                    </p>
+                    @*
+        <span class="score">4-1</span>
+        <div class="team-1 w-50">
+            <div class="team-details w-100 text-center">
+                <img src="images/logo_1.png" alt="Image" class="img-fluid">
+                <h3>LA LEGA <span>(win)</span></h3>
+                <ul class="list-unstyled">
+                    <li>Anja Landry (7)</li>
+                    <li>Eadie Salinas (12)</li>
+                    <li>Ashton Allen (10)</li>
+                    <li>Baxter Metcalfe (5)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="team-2 w-50">
+            <div class="team-details w-100 text-center">
+                <img src="images/logo_2.png" alt="Image" class="img-fluid">
+                <h3>JUVENDU <span>(loss)</span></h3>
+                <ul class="list-unstyled">
+                    <li>Macauly Green (3)</li>
+                    <li>Arham Stark (8)</li>
+                    <li>Stephan Murillo (9)</li>
+                    <li>Ned Ritter (5)</li>
+                </ul>
+            </div>
+        </div>*@
+               @* </div>*@
+                </div>
+            </div>
+        </div>
+
+
+        <div class="latest-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 title-section">
+                        <h2 class="heading">Latest News</h2>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <div class="post-entry">
+                            <a href="#">
+                                <img src="~/images/img_1.jpg" alt="Image" class="img-fluid">
+                            </a>
+                            <div class="caption">
+                                <div class="caption-inner">
+                                    <h3 class="mb-3">Romolu to stay at Real Nadrid?</h3>
+                                    <div class="author d-flex align-items-center">
+                                        <div class="img mb-2 mr-3">
+                                            <img src="~/images/person_1.jpg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <h4>Mellissa </h4>
+                                            <span>May 19, 2024 &bullet; Sports</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="post-entry">
+                            <a href="#">
+                                <img src="~/images/img_3.jpg" alt="Image" class="img-fluid">
+                            </a>
+                            <div class="caption">
+                                <div class="caption-inner">
+                                    <h3 class="mb-3">Kai Nets Double To Secure Comfortable Away Win</h3>
+                                    <div class="author d-flex align-items-center">
+                                        <div class="img mb-2 mr-3">
+                                            <img src="~/images/person_1.jpg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <h4>Mellissa Allison</h4>
+                                            <span>May 19, 2024 &bullet; Sports</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="post-entry">
+                            <a href="#">
+                                <img src="~/images/img_2.jpg" alt="Image" class="img-fluid">
+                            </a>
+                            <div class="caption">
+                                <div class="caption-inner">
+                                    <h3 class="mb-3">Dogba set for Juvendu return?</h3>
+                                    <div class="author d-flex align-items-center">
+                                        <div class="img mb-2 mr-3">
+                                            <img src="~/images/person_1.jpg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <h4>Mellissa Allison</h4>
+                                            <span>May 19, 2024 &bullet; Sports</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="site-section bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="widget-next-match">
+                            <div class="widget-title">
+                                <h3>Next Match</h3>
+                            </div>
+                            <div class="widget-body mb-3">
+                                <div class="widget-vs">
+                                    <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                                        <div class="team-1 text-center">
+                                            <img src="~/images/logo_1.png" alt="Image">
+                                            <h3>Football League</h3>
+                                        </div>
+                                        <div>
+                                            <span class="vs"><span>VS</span></span>
+                                        </div>
+                                        <div class="team-2 text-center">
+                                            <img src="~/images/logo_2.png" alt="Image">
+                                            <h3>Soccer</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center widget-vs-contents mb-4">
+                                <h4>World Cup League</h4>
+                                <p class="mb-5">
+                                    <span class="d-block">Oct 10th, 2024</span>
+                                    <span class="d-block">9:30 AM GMT+0</span>
+                                    <strong class="text-primary">New Delhi</strong>
+                                </p>
+
+                                <div id="date-countdown2" class="pb-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+
+                        <div class="widget-next-match">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>P</th>
+                                        <th>Team</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>PTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-white" >
+                                    <tr>
+                                        <td>1</td>
+                                        <td><strong class="text-white">Football League</strong></td>
+                                        <td>28</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>180</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><strong class="text-white">Soccer</strong></td>
+                                        <td>22</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>140</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><strong class="text-white">Juvendo</strong></td>
+                                        <td>22</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>140</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><strong class="text-white">French Football League</strong></td>
+                                        <td>22</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>140</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong class="text-white">Legia Abante</strong></td>
+                                        <td>22</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>140</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td><strong class="text-white">Gliwice League</strong></td>
+                                        <td>22</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>140</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td><strong class="text-white">Cornika</strong></td>
+                                        <td>22</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>138</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td><strong class="text-white">Gravity Smash</strong></td>
+                                        <td>10</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>130</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .site-section -->
+
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 title-section">
+                        <h2 class="heading">Videos</h2>
+                    </div>
+                    <div class="col-6 text-right">
+                        <div class="custom-nav">
+                            <a href="#" class="js-custom-prev-v2"><span class="icon-keyboard_arrow_left"></span></a>
+                            <span></span>
+                            <a href="#" class="js-custom-next-v2"><span class="icon-keyboard_arrow_right"></span></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="owl-4-slider owl-carousel">
+                    <div class="item">
+                        <div class="video-media">
+                            <img src="~/images/img_1.jpg" alt="Image" class="img-fluid">
+                            <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                                <span class="icon mr-3">
+                                    <span class="icon-play"></span>
+                                </span>
+                                <div class="caption">
+                                    <h3 class="m-0">Dogba set for Juvendu return</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="video-media">
+                            <img src="~/images/img_2.jpg" alt="Image" class="img-fluid">
+                            <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                                <span class="icon mr-3">
+                                    <span class="icon-play"></span>
+                                </span>
+                                <div class="caption">
+                                    <h3 class="m-0">Kai Nets Double To Secure Comfortable Away Win</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="video-media">
+                            <img src="~/images/img_3.jpg" alt="Image" class="img-fluid">
+                            <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                                <span class="icon mr-3">
+                                    <span class="icon-play"></span>
+                                </span>
+                                <div class="caption">
+                                    <h3 class="m-0">Romolu to stay at Real Nadrid</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="video-media">
+                            <img src="~/images/img_1.jpg" alt="Image" class="img-fluid">
+                            <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                                <span class="icon mr-3">
+                                    <span class="icon-play"></span>
+                                </span>
+                                <div class="caption">
+                                    <h3 class="m-0">Dogba set for Juvendu return</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="video-media">
+                            <img src="~/images/img_2.jpg" alt="Image" class="img-fluid">
+                            <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                                <span class="icon mr-3">
+                                    <span class="icon-play"></span>
+                                </span>
+                                <div class="caption">
+                                    <h3 class="m-0">Kai Nets Double To Secure Comfortable Away Win</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="video-media">
+                            <img src="~/images/img_3.jpg" alt="Image" class="img-fluid">
+                            <a href="https://vimeo.com/139714818" class="d-flex play-button align-items-center" data-fancybox>
+                                <span class="icon mr-3">
+                                    <span class="icon-play"></span>
+                                </span>
+                                <div class="caption">
+                                    <h3 class="m-0">Romolu to stay at Real Nadrid</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container site-section">
+            <div class="row">
+                <div class="col-6 title-section">
+                    <h2 class="heading">Our Blog</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="custom-media d-flex">
+                        <div class="img mr-4">
+                            <img src="~/images/img_1.jpg" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="text">
+                            <span class="meta">Sept 10, 2024</span>
+                            <h3 class="mb-4"><a href="#">On-Game mode</a></h3>
+                            <p>A world cup is generally, though not always, considered the premier competition in its sport, with the victor attaining the highest honour in that sport and being able to lay claim to the title of their sport's best.</p>
+                            <p><a href="#">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="custom-media d-flex">
+                        <div class="img mr-4">
+                            <img src="~/images/img_3.jpg" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="text">
+                            <span class="meta">sept 10, 2024</span>
+                            <h3 class="mb-4"><a href="#">Championship</a></h3>
+                            <p>A world cup is a global sporting competition in which the participant entities –usually international teams or individuals representing their countries–compete for the title of world champion. </p>
+                            <p><a href="#">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>News</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Club News</a></li>
+                                <li><a href="#">Media Center</a></li>
+                                <li><a href="#">Video</a></li>
+                                <li><a href="#">RSS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>Tickets</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">Online Ticket</a></li>
+                                <li><a href="#">Payment and Prices</a></li>
+                                <li><a href="#">Contact &amp; Booking</a></li>
+                                <li><a href="#">Tickets</a></li>
+                                <li><a href="#">Coupon</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>Matches</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">Standings</a></li>
+                                <li><a href="#">World Cup</a></li>
+                                <li><a href="#">La Lega</a></li>
+                                <li><a href="#">Hyper Cup</a></li>
+                                <li><a href="#">World League</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="widget mb-3">
+                            <h3>Social</h3>
+                            <ul class="list-unstyled links">
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class=" pt-5">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | "Rise Above the Rest, Aim for the Best"| This Website is made with Love And Passion <i class="icon-heart"
+                                                                                                                                                                                                         aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"><b>Mahesh Reddy H L </b></a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+    </div>
+    <!-- .site-wrap -->
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/aos.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.mb.YTPlayer.min.js"></script>
+
+
+    <script src="js/main.js"></script>
+
+
+
+   
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+   @* <footer>
+        <p><b><i class="bg-gradient active">&copy; @DateTime.Now.Year - Rise Above the Rest, Aim for the Best</i></b></p>
+    </footer>*@
+
+</body>
+
+</html>

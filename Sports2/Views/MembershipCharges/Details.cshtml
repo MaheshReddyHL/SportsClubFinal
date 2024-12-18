@@ -1,0 +1,41 @@
+﻿@model Sports2.Models.MembershipCharge
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MembershipCharge</h4>
+    <hr />
+    <dl class="dl-horizontal text-white">
+        <dt>
+            @Html.DisplayNameFor(model => model.MembershipChargeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MembershipChargeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MembershipType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MembershipType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MembershipChargeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

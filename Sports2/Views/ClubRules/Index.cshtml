@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Sports2.Models.ClubRule>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    table{
+        background-color:antiquewhite;
+    }
+</style>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new {@class="btn btn-secondary"})
+</p>
+<p>
+    @Html.ActionLink("Back", "AdminDashboard", "Admin", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table text-white" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RuleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RuleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.RuleId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.RuleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.RuleId })
+        </td>
+    </tr>
+}
+
+</table>

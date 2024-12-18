@@ -1,0 +1,39 @@
+﻿@model Sports2.Models.ClubRule
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3 class="text-danger">Are you sure you want to delete this?</h3>
+<div>
+    <h4>ClubRule</h4>
+    <hr />
+    <dl class="dl-horizontal text-white ">
+        <dt>
+            @Html.DisplayNameFor(model => model.RuleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RuleId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

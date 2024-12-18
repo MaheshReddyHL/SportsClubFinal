@@ -1,0 +1,74 @@
+﻿@model Sports2.Models.Admin
+@{
+    ViewBag.Title = "Admin Dashboard";
+}
+
+
+<style>
+    .backgrd {
+        background-image: url('../../images/golf.jpg');
+        background-repeat: space;
+        background-repeat: space;
+        background-size: 100% 200%;
+    }
+    .header-right {
+        float: right;
+        padding-right: 20px;
+    }
+
+    .header-right p {
+            font-size: 16px;
+            font-weight: bold;
+    }
+</style>
+<body class="backgrd">
+    @if (Session["email"] != null)
+    {
+        <div class="text-red" style="color:crimson;position:relative; float: right;">
+            Welcome, @Session["email"]!
+             <a href="@Url.Action("Login", "Account")" class="btn btn-primary">Logout</a>
+        </div>
+    }
+    <br /><br /><br />
+    <h2>Admin Dashboard</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Manage Time Slots</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        @Html.ActionLink("Add TimeSlots", "Index", "TimeSlots", null, new { @class = "btn btn-danger" })
+                    </li>
+                    <li class="list-group-item">
+                        @Html.ActionLink("View TimeSlot Requests", "Index", "TimeSlotRequests1", null, new { @class = "btn btn-info" })
+                    </li>
+                    <li class="list-group-item">
+                        @Html.ActionLink("Check Available TimeSlots", "TimeSlotIndex", "Admin", null, new { @class = "btn btn-success" })
+                    </li>
+                </ul>
+
+
+
+
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-light">Manage Club Facilities</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        @Html.ActionLink("ManageFacilities", "Index", "Facilities", null, new { @class = "btn btn-danger" })
+                    </li>
+                </ul>
+                <h3 class="text-light">Manage Membership</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        @Html.ActionLink("Add Membership Charges", "Index", "MembershipCharges", null, new { @class = "btn btn-danger" })
+                    </li>
+                    <li class="list-group-item">
+                        @Html.ActionLink("Add Club Rules", "Index", "ClubRules", null, new { @class = "btn btn-danger" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
